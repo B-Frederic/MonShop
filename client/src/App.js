@@ -15,6 +15,7 @@ import Error from './pages/Error';
 // Components
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import SignUp from './pages/SignUp';
 
 
 const Layout = () => {
@@ -61,6 +62,10 @@ const router = createBrowserRouter ([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
       {
         path: "/*",

@@ -1,6 +1,6 @@
 // React
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 // Redux
 import { useDispatch } from "react-redux";
@@ -92,22 +92,22 @@ const Login = () => {
           <span className="text-sm text-gray-900">Connexion avec Google</span>
         </div>
         <div className="flex flex-col items-center">
-          <p
+          <Link
+            to="/login"
             className="mb-2 text-blue-500 hover:text-black italic underline underline-offset-2 cursor-pointer"
-            href="/login"
           >
             Mot de passe oublié ?
-          </p>
+          </Link>
 
           <div className="flex">
             <p>Pas encore inscrit? </p> &nbsp;{" "}
-            <p
+            <Link
+              to="/signup"
               className="mb-2 text-blue-500 hover:text-black italic underline underline-offset-2 cursor-pointer"
-              href="/signup"
             >
               {" "}
               S'inscrire
-            </p>
+            </Link>
           </div>
         </div>
       </div>

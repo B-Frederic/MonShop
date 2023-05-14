@@ -15,9 +15,9 @@ import { payment } from "../../assets/img";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-[#949494] py-10 font-titleFont">
-      <div className="w-[80%] lg:w-[80%] md:w-[100%] lg:px-0 md:px-4 mx-auto grid grid-cols-4">
-        <div className="flex flex-col gap-7">
+    <div className=" bg-black text-[#949494] font-titleFont">
+      <div className=" w-[80%] py-10 mx-auto grid grid-cols-4">
+        <div className="flex flex-col justify-center gap-7">
           <p className="w-28 font-bold text-3xl text-white underline underline-offset-5">MonShop</p>
           <p className="text-sm tracking-wide">© 2023, MonShop</p>
           <img className="w-40" src={payment} alt="icon payment" />
@@ -70,11 +70,11 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-center">
           <input
-            className="lg:w-[300px] bg-transparent border px-4 py-2 text-sm"
+            className="bg-transparent border px-4 py-2 text-sm"
             placeholder="e-mail"
             type="text"
           />
-          <button className="lg:w-[300px] h-8 text-sm border text-white border-t-0 hover:bg-gray-900 active:bg-white active:text-black">
+          <button className="h-8 text-sm border text-white border-t-0 hover:bg-gray-900 active:bg-white active:text-black">
             S'abonner à notre catalogue
           </button>
         </div>

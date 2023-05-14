@@ -35,7 +35,7 @@ const Product = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto my-[66.5px] flex gap-10">
+      <div className="w-[90%] mx-auto my-[66.5px] flex gap-10">
         <div className="w-2/5 relative">
           <img
             className="w-full h-[550px] object-cover"

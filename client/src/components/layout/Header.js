@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <div className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titlefont sticky top-0 z-50">
-      <div className="lg:max-w-screen-xl md:w-[90%] h-full mx-auto flex items-center justify-between">
+      <div className="max-w-screen-xl w-[90%] h-full mx-auto flex items-center justify-between">
         <Link to="/">
           <h1 className="w-28 font-bold text-3xl underline underline-offset-5">
             MonShop

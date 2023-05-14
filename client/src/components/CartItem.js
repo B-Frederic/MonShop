@@ -17,7 +17,7 @@ const CartItem = () => {
   const productData = useSelector((state) => state.shop.productData);
 
   return (
-    <div className="w-2/3 px-5">
+    <div className="w-2/3 pr-[5px]">
       <div className="w-full">
         <h2 className="font-titleFont text-2xl text-center">Mon panier d'achat</h2>
       </div>
@@ -35,8 +35,8 @@ const CartItem = () => {
               />
             </div>
             <h2 className="w-52">{item.title}</h2>
-            <p className="w-10 lg:block sm:hidden">{item.price}€</p>
-            <p className="text-sm lg:block sm:hidden">{item.quantity > 1 ? "Quantités" : "Quantité"}</p>
+            <p className="w-10">{item.price}€</p>
+            <p className="text-sm">{item.quantity > 1 ? "Quantités" : "Quantité"}</p>
             <div className="flex items-center gap-4 text-sm font-semibold">
               <button
                 onClick={() =>

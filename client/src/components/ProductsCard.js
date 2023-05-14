@@ -61,7 +61,7 @@ const ProductsCard = ({ product }) => {
                   })
                 )
               }
-              className="absolute z-20 w-[100px] text-gray-500 font-semibold hover:text-gray-900 flex items-center gap-2 top-0 transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500"
+              className="absolute z-20 w-[80px] text-gray-500 font-semibold hover:text-gray-900 flex items-center gap-2 top-0 transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500"
             >
               ajouter {" "}
               <span>
