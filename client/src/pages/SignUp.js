@@ -11,12 +11,12 @@ const SignUp = () => {
             <form onSubmit={signUpForm} className="flex flex-col mt-10">
         <h2 className="text-center font-bold text-4xl mb-10">Inscription</h2>
         <div className="flex flex-col">
-          <label className="mb-4 ml-1 text-xl font-semibold" htmlFor="email">
+          <label className="mb-4 ml-1 text-xl font-semibold" htmlFor="name">
             Nom
           </label>
           <input
             className="w-80 mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
-            id="email"
+            id="name"
             type="text"
             placeholder="Votre nom"
           />
