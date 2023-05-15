@@ -31,22 +31,26 @@ const ProductsCard = ({ product }) => {
         className="w-full h-96 cursor-pointer overflow-hidden"
       >
         <img
-          className="w-full h-full object-cover group-hover:scale-110 duration-500"
+          className="w-full h-full object-cover lg:group-hover:scale-110 duration-500"
           src={product.image}
           alt={product.title}
         />
       </div>
       <div className="w-full border-[1px] px-2 py-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start">
           <div>
             <h2 className="font-titleFont text-base font-bold">
               {product.title.substring(0, 15)}
+              <p className="italic">{product.category}</p>
             </h2>
           </div>
-          <div className="flex justify-end gap-2 relative overflow-hidden w-28 text-sm">
-            <div className="flex gap-2 transform group-hover:translate-x-24 transition-transform duration-500">
+          <div className="flex lg:flex-row flex-col justify-end items-center gap-2 relative overflow-hidden w-28 text-sm">
+            <div className="flex lg:ml-0 ml-2 gap-2 lg:transform lg:group-hover:translate-x-24 lg:transition-transform lg:duration-500">
               <p className="line-through text-gray-500">{product.oldPrice}€</p>
               <p className="font-semibold">{product.price}€</p>
+            </div>
+            <div className="w-100px mt-4 mx-auto px-[20px] py-[5px] bg-green-400 lg:hidden">
+              <button className="text-md font-semibold">Ajouter</button>
             </div>
             <p
               onClick={() =>
@@ -61,7 +65,7 @@ const ProductsCard = ({ product }) => {
                   })
                 )
               }
-              className="absolute z-20 w-[80px] text-gray-500 font-semibold hover:text-gray-900 flex items-center gap-2 top-0 transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500"
+              className="absolute z-20 w-[80px] text-gray-500 font-semibold hover:text-gray-900 lg:flex items-center gap-2 top-0 lg:transform lg:-translate-x-32 lg:group-hover:translate-x-0 lg:transition-transform cursor-pointer lg:duration-500 hidden"
             >
               ajouter {" "}
               <span>
@@ -69,9 +73,6 @@ const ProductsCard = ({ product }) => {
               </span>
             </p>
           </div>
-        </div>
-        <div>
-          <p>{product.category}</p>
         </div>
         <div className="absolute top-4 right-0">
           {product.isNew && (
