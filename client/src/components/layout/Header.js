@@ -5,6 +5,7 @@ import { cart, profile } from "../../assets/img";
 import { ToastContainer } from "react-toastify";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
 
@@ -27,8 +28,8 @@ const Header = () => {
             MonShop
           </h1>
         </Link>
-        <div className="flex items-center gap-3">
-          <ul className="flex items-center lg:gap-8 md:gap-4">
+        <div className="flex items-center md:gap-3">
+          <ul className="sm:flex items-center md:gap-6 gap-3 hidden">
             <Link to="/">
               <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
                 Accueil
@@ -87,7 +88,9 @@ const Header = () => {
             </div>
             )
           }
-
+          <div className="sm:hidden text-3xl">
+            <RxHamburgerMenu />
+          </div>
         </div>
       </div>
         <ToastContainer
