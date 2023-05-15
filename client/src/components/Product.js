@@ -35,10 +35,10 @@ const Product = () => {
 
   return (
     <div>
-      <div className="w-[90%] mx-auto my-[66.5px] flex gap-10">
-        <div className="w-2/5 relative">
+      <div className="sm:w-[90%] w-full my-[70px] mx-auto lg:px-20 flex items-center sm:flex-row flex-col sm:gap-10 gap-4">
+        <div className="sm:w-2/5 relative">
           <img
-            className="w-full h-[550px] object-cover"
+            className="sm:w-full w-[250px] sm:h-[550px] h-[350px] object-cover"
             src={details.image}
             alt={details.title}
           />
@@ -50,7 +50,7 @@ const Product = () => {
             )}
           </div>
         </div>
-        <div className="w-3/5 flex flex-col justify-center gap-12">
+        <div className="w-3/5 flex flex-col justify-center sm:gap-12 gap-8">
           <div>
             <h2 className="text-4x1 font-semibold">{details.title}</h2>
             <div className="flex items-center gap-4 mt-3">
@@ -58,6 +58,10 @@ const Product = () => {
               <p className="font-semibold">{details.price}€</p>
             </div>
           </div>
+          <p className="text-base text-gray-500">
+            Catégorie:{" "}
+            <span className="font-medium capitalize">{details.category}</span>
+          </p>
           <div className="flex items-center gap-2 text-base">
             <div className="flex"> 
               {rating()}
@@ -67,8 +71,8 @@ const Product = () => {
             </p>
           </div>
           <p className="text-base text-gray-500 -mt-3">{details.description}</p>
-          <div className="flex gap-4">
-            <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
+          <div className="flex lg:flex-row flex-col gap-4">
+            <div className="w-[200px] flex items-center justify-between text-gray-500 gap-4 border p-3">
               <p className="text-sm">
                 {baseQty === 1 ? "Quantité" : "Quantités"}
               </p>
@@ -77,14 +81,14 @@ const Product = () => {
                   onClick={() =>
                     setBaseQty(baseQty === 1 ? (baseQty = 1) : baseQty - 1)
                   }
-                  className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                  className="border h-5 font-normal text-lg flex items-center justify-center px-2 lg:hover:bg-gray-700 lg:hover:text-white cursor-pointer duration-300 active:bg-black"
                 >
                   -
                 </button>
                 <span>{baseQty}</span>
                 <button
                   onClick={() => setBaseQty(baseQty + 1)}
-                  className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
+                  className="border h-5 font-normal text-lg flex items-center justify-center px-2 lg:hover:bg-gray-700 lg:hover:text-white cursor-pointer duration-300 active:bg-black"
                 >
                   +
                 </button>
@@ -103,15 +107,11 @@ const Product = () => {
                   })
                 )
               }
-              className="bg-black text-white py-3 px-6 active:bg-gray-800"
+              className="w-[200px] bg-black text-white py-3 sm:px-6 px-4 active:bg-gray-800"
             >
               Ajouter au panier
             </button>
           </div>
-          <p className="text-base text-gray-500">
-            Catégorie:{" "}
-            <span className="font-medium capitalize">{details.category}</span>
-          </p>
         </div>
       </div>
     </div>

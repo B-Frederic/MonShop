@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <div className="w-full h-[603px] flex flex-col items-center justify-center gap-10 my-10 bg-red">
       <div className="w-full flex flex-col items-center justify-center gap-5">
-        <p className="text-lg italic text-red-600">Seul la connexion avec Google est active</p>
+        <p className="w-[300px] text-center text-lg italic text-red-600">Seul la connexion avec Google est active</p>
         <form onSubmit={loginForm} className="flex flex-col">
           <h2 className="text-center font-bold text-4xl mb-10">Connexion</h2>
           <div className="flex flex-col">
@@ -60,7 +60,7 @@ const Login = () => {
               Identifiant
             </label>
             <input
-              className="w-80 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
+              className="w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
               id="email"
               type="text"
               placeholder="Votre email"
@@ -71,7 +71,7 @@ const Login = () => {
               Mot de passe
             </label>
             <input
-              className="w-80 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
+              className="w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
               type="password"
               id="password"
               placeholder="Votre mot de passe"

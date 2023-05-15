@@ -28,7 +28,7 @@ const Header = () => {
             MonShop
           </h1>
         </Link>
-        <div className="flex items-center md:gap-3">
+        <div className="flex items-center sm:gap-3 gap-1">
           <ul className="sm:flex items-center md:gap-6 gap-3 hidden">
             <Link to="/">
               <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
@@ -62,7 +62,7 @@ const Header = () => {
           </Link>
           {userInfo && (
             <div className="flex justify-center items-center">
-              <p className="mr-2 text-lg font-titleFont font-bold md:block sm:hidden">
+              <p className="mr-2 text-lg font-titleFont font-bold lg:block hidden">
                 {userInfo.name}
               </p>
             </div>

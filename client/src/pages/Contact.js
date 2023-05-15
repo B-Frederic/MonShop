@@ -16,7 +16,7 @@ const Contact = () => {
             Nom
           </label>
           <input
-            className="w-80 mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
+            className="w-[300px] mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
             id="email"
             type="text"
             placeholder="Votre nom"
@@ -27,7 +27,7 @@ const Contact = () => {
             Prénom
           </label>
           <input
-            className="w-80 mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
+            className="w-[300px] mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
             id="email"
             type="text"
             placeholder="Votre prénom"
@@ -38,7 +38,7 @@ const Contact = () => {
             Email
           </label>
           <input
-            className="w-80 mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
+            className="w-[300px] mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5"
             id="email"
             type="text"
             placeholder="Votre email"
@@ -51,7 +51,7 @@ const Contact = () => {
           >
             Message
           </label>
-          <textarea className="w-80 h-[150px] resize-none bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5" id="password"  placeholder="Saississez votre message"></textarea>
+          <textarea className="w-[300px] h-[150px] resize-none bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg p-2.5" id="password"  placeholder="Saississez votre message"></textarea>
         </div>
         <button type="submit" className="justify-center mt-10 bg-gray-600 text-white py-2 px-4 font-semibold tracking-wide rounded-md hover:bg-gray-800 duration-300">
           Envoyer
