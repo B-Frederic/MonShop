@@ -25,8 +25,8 @@ const Profile = () => {
                     </div>
                 </div>
             ) : (
-                <div className=" h-full flex items-center justify-center">
-                    <div className="p-[40px] bg-gray-800 rounded-xl font-bold text-xl text-red-600">
+                <div className="h-full flex items-center justify-center px-[20px]">
+                    <div className="p-[20px] bg-gray-800 rounded-xl font-bold text-xl text-center text-red-600">
                         <p>Il faut être connecté pour accéder à cette page</p>
                     </div>       
                 </div>

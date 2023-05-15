@@ -3,10 +3,9 @@ import React from 'react';
 const Informations = () => {
     return (
         <div className="w-full flex flex-col justify-center items-center my-20">
-            <p className="text-center text-lg text-red-500 mb-10">
+            <p className="sm:w-full w-[300px] text-center text-lg text-red-500 mb-10">
                 J'ai ajouté le backend dans le répertoire pour ceux qui veulent voir le code "express".<br/>
                 J'avais connecté le token, mais ne déployant pas le back je l'ai commenté pour le désactiver. <br/>
-                Le responsive n'inclus que le dekstop/laptop, un futur projet E-commerce serra fait en full responsive.
             </p>
             <h2 className="text-2xl font-bold">Technos utilisés</h2>
             <div>
