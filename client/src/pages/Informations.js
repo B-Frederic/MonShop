@@ -46,6 +46,4 @@ const Informations = () => {
     );
 };
 
-// Front: (React/Redux Toolkit/ React Router Dom/ Tailwind) Back: (Express) Outils: (FireBase, Stripe, React Icons) Wrapper: (Axios)
-
 export default Informations;

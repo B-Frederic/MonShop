@@ -14,7 +14,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="w-full h-auto sm:h-[60%] overflow-x-hidden">
+    <div className="w-full h-auto overflow-x-hidden">
       <div className="w-screen relative">
         <div
           style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
