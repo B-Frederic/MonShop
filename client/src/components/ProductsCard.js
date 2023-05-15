@@ -50,7 +50,23 @@ const ProductsCard = ({ product }) => {
               <p className="font-semibold">{product.price}€</p>
             </div>
             <div className="w-100px mt-4 mx-auto px-[20px] py-[5px] bg-green-400 lg:hidden">
-              <button className="text-md font-semibold">Ajouter</button>
+              <button
+                onClick={() =>
+                  dispatch(
+                    addToCart({
+                      _id: product._id,
+                      title: product.title,
+                      image: product.image,
+                      price: product.price,
+                      quantity: 1,
+                      description: product.description,
+                    })
+                  )
+                }
+                className="text-md font-semibold"
+              >
+                Ajouter
+              </button>
             </div>
             <p
               onClick={() =>
@@ -67,7 +83,7 @@ const ProductsCard = ({ product }) => {
               }
               className="absolute z-20 w-[80px] text-gray-500 font-semibold hover:text-gray-900 lg:flex items-center gap-2 top-0 lg:transform lg:-translate-x-32 lg:group-hover:translate-x-0 lg:transition-transform cursor-pointer lg:duration-500 hidden"
             >
-              ajouter {" "}
+              ajouter{" "}
               <span>
                 <BsArrowRight />
               </span>

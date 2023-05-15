@@ -59,7 +59,7 @@ const SignUp = () => {
           <label className="mb-4 ml-1 text-xl font-semibold" htmlFor="file">
             Photo
           </label>
-          <input className="w-[300px]" type="file" id="file" />
+          <input className="w-[300px]" type="file" id="file" accept=".png, .jpeg, .jpg" />
         </div>
         <button
           type="submit"
