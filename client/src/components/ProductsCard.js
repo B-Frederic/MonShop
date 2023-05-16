@@ -61,8 +61,8 @@ const ProductsCard = ({ product }) => {
                       quantity: 1,
                       description: product.description,
                     })
-                  )
-                }
+                    )
+                  }
                 className="text-md font-semibold"
               >
                 Ajouter

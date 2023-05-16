@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="flex flex-col justify-center gap-7">
           <p className="w-28 font-bold text-3xl text-white underline underline-offset-5">MonShop</p>
           <p className="text-sm tracking-wide">© 2023, MonShop</p>
-          <img className="w-40" src={payment} alt="icon payment" />
+          <img className="w-40 h-[30px]" src={payment} alt="icon payment" />
           <div className="flex gap-5 text-lg text-gray-400">
             <FaYoutube className="hover:text-white duration-300 cursor-pointer" />
             <FaFacebook className="hover:text-white duration-300 cursor-pointer" />
