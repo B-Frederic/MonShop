@@ -1,25 +1,27 @@
+import { sale1, sale2, sale3, sale4 } from "../assets/img";
+
 const saleData = [
     {
       id: 1,
-      image: "https://amazonproone.vercel.app/static/media/img2.bc1bdb910ead16c65197.jpg",
+      image: `${sale1}`,
       alt: "sale amazon1",
       loading: "priority",
     },
     {
       id: 2,
-      image: "https://amazonproone.vercel.app/static/media/img5.aa945e25375bfdee385f.jpg",
+      image: `${sale2}`,
       alt: "sale amazon1",
       loading: "priority",
     },
     {
       id: 3,
-      image: "https://amazonproone.vercel.app/static/media/img3.c80809bb40bee5c34372.jpg",
+      image: `${sale3}`,
       alt: "sale amazon1",
       loading: "priority",
     },
     {
       id: 4,
-      image: "https://amazonproone.vercel.app/static/media/img1.efb3d39101f7ef77d616.jpg",
+      image: `${sale4}`,
       alt: "sale amazon1",
       loading: "priority",
     }
