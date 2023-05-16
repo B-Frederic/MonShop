@@ -40,7 +40,7 @@ const Header = () => {
               MonShop
             </h1>
           </Link>
-          <div className="flex items-center sm:gap-3 gap-2">
+          <div className="flex items-center sm:gap-3 gap-1">
             <nav>
               <ul className="sm:flex items-center md:gap-6 gap-3 hidden">
                 {dataMenu.map((item, index) => (
