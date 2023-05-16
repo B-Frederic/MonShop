@@ -43,9 +43,9 @@ const Header = () => {
           <div className="flex items-center sm:gap-3 gap-2">
             <nav>
               <ul className="sm:flex items-center md:gap-6 gap-3 hidden">
-                {dataMenu.map((item) => (
+                {dataMenu.map((item, index) => (
                   <NavLink
-                    key={item.id}
+                    key={index}
                     className={(nav) =>
                       nav.isActive
                         ? "underline underline-offset-4 decoration-orange-500"

@@ -15,9 +15,9 @@ const MenuBurger = ({ setBurgerMenu }) => {
             <div className="flex pt-[100px] justify-center w-[100vw] h-[100vh] bg-black opacity-95">
             <nav>
                 <ul className="text-white text-2xl flex flex-col items-center">
-                    {dataMenu.map((item) => (
+                    {dataMenu.map((item, index) => (
                         <NavLink
-                        key={item.idMenuBurger}
+                        key={index}
                         className={(nav) =>
                             nav.isActive
                             ? "underline underline-offset-4 decoration-orange-500"
