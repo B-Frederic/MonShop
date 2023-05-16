@@ -1,6 +1,8 @@
+// React
 import React, { useEffect, useState } from "react";
-import ProductsCard from "./ProductsCard";
 import { HiArrowUp } from "react-icons/hi";
+// Component
+import ProductsCard from "./ProductsCard";
 
 const Products = ({ products }) => {
 

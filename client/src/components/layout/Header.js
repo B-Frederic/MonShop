@@ -1,11 +1,19 @@
+// React
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import { cart, profile } from "../../assets/img";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { ToastContainer } from "react-toastify";
+// Redux
+import { useSelector } from "react-redux";
+// Firebase
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
-import { RxHamburgerMenu } from "react-icons/rx";
+// Data
+import dataMenu from "../../data/dataMenu";
+// Component
+import MenuBurger from "./MenuBurger";
+// Picture
+import { cart, profile } from "../../assets/img";
 
 const Header = () => {
   const productData = useSelector((state) => state.shop.productData);
@@ -23,15 +31,11 @@ const Header = () => {
     setBurgerMenu(!burgerMenu);
   };
 
-  const handleCloseBurgerMenu = () => {
-    setBurgerMenu(false);
-  };
-
   return (
     <div className="relative">
       <div className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titlefont sticky top-0 z-50">
         <div className="max-w-screen-xl w-[90%] h-full mx-auto flex items-center justify-between">
-          <Link to="/">
+          <Link onClick={() => setBurgerMenu(false)} to="/">
             <h1 className="w-28 font-bold sm:text-3xl text-[28px] underline underline-offset-5">
               MonShop
             </h1>
@@ -39,57 +43,24 @@ const Header = () => {
           <div className="flex items-center sm:gap-3 gap-2">
             <nav>
               <ul className="sm:flex items-center md:gap-6 gap-3 hidden">
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  to="/"
-                >
-                  <li className="text-base text-black font-bold hover:text-orange-900 cursor-pointer duration-300">
-                    Accueil
-                  </li>
-                </NavLink>
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  to="/profile"
-                >
-                  <li className="text-base text-black font-bold hover:text-orange-900 cursor-pointer duration-300">
-                    Profil
-                  </li>
-                </NavLink>
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  to="informations"
-                >
-                  <li className="text-base text-black font-bold hover:text-orange-900 cursor-pointer duration-300">
-                    Informations
-                  </li>
-                </NavLink>
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  to="/contact"
-                >
-                  <li className="mr-2 text-base text-black font-bold hover:text-orange-900 cursor-pointer duration-300">
-                    Contact
-                  </li>
-                </NavLink>
+                {dataMenu.map((item) => (
+                  <NavLink
+                    key={item.id}
+                    className={(nav) =>
+                      nav.isActive
+                        ? "underline underline-offset-4 decoration-orange-500"
+                        : ""
+                    }
+                    to={item.path}
+                  >
+                    <li className="text-base text-black font-bold hover:text-orange-900 cursor-pointer duration-300">
+                      {item.name}
+                    </li>
+                  </NavLink>
+                ))}
               </ul>
             </nav>
-            <Link to="/cart">
+            <Link onClick={() => setBurgerMenu(false)} to="/cart">
               <div className="relative">
                 <img className="w-8 h-8" src={cart} alt="cart icon" />
                 <p className="w-6"></p>
@@ -98,6 +69,7 @@ const Header = () => {
                 </span>
               </div>
             </Link>
+
             {userInfo && (
               <div className="flex justify-center items-center">
                 <p className="mr-2 text-lg font-titleFont font-bold lg:block hidden">
@@ -105,8 +77,9 @@ const Header = () => {
                 </p>
               </div>
             )}
+
             {userInfo ? (
-              <Link to="/profile">
+              <Link onClick={() => setBurgerMenu(false)} to="/profile">
                 <img
                   className="w-[40px] h-[40px] rounded-full"
                   src={userInfo.image}
@@ -114,7 +87,7 @@ const Header = () => {
                 />
               </Link>
             ) : (
-              <Link to="/login">
+              <Link onClick={() => setBurgerMenu(false)} to="/login">
                 <img
                   className="w-[40px] h-[40px] rounded-full"
                   src={profile}
@@ -122,7 +95,6 @@ const Header = () => {
                 />
               </Link>
             )}
-
             {user && (
               <div className="flex justify-center items-center">
                 <p className="mr-2 text-lg font-titleFont font-bold">
@@ -148,60 +120,7 @@ const Header = () => {
           theme="dark"
         />
       </div>
-      {burgerMenu && (
-        <div className="md:hidden absolute right-0 z-50">
-          <div className="flex pt-[100px] justify-center w-[100vw] h-[100vh] bg-black opacity-95">
-            <nav>
-              <ul className="text-white text-2xl flex flex-col items-center">
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  to="/"
-                  onClick={handleCloseBurgerMenu}
-                >
-                  <li className="py-10 px-5">Accueil</li>
-                </NavLink>
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  onClick={handleCloseBurgerMenu}
-                  to="/profile"
-                >
-                  <li className="py-10 px-5">Profil</li>
-                </NavLink>
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  onClick={handleCloseBurgerMenu}
-                  to="informations"
-                >
-                  <li className="py-10 px-5">Informations</li>
-                </NavLink>
-                <NavLink
-                  className={(nav) =>
-                    nav.isActive
-                      ? "underline underline-offset-4 decoration-orange-500"
-                      : ""
-                  }
-                  onClick={handleCloseBurgerMenu}
-                  to="/contact"
-                >
-                  <li className="py-10 px-5">Contact</li>
-                </NavLink>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      )}
+      {burgerMenu && <MenuBurger setBurgerMenu={setBurgerMenu} />}
     </div>
   );
 };

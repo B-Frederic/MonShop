@@ -1,5 +1,8 @@
+// React
 import React from 'react';
+// Redux
 import { useSelector } from 'react-redux';
+// Component
 import SignOut from '../components/SignOut';
 
 const Profile = () => {
