@@ -6,8 +6,11 @@ import { addToCart } from "../redux/ShopSlice";
 import { useDispatch } from "react-redux";
 // React icons
 import { BsArrowRight } from "react-icons/bs";
+// Toastify
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductsCard = ({ product }) => {
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const _id = product.title;
@@ -23,6 +26,10 @@ const ProductsCard = ({ product }) => {
       },
     });
   };
+
+  const handleAddItem = () => {
+    
+  }
 
   return (
     <div className="group relative">
@@ -61,7 +68,7 @@ const ProductsCard = ({ product }) => {
                       quantity: 1,
                       description: product.description,
                     })
-                    )
+                    ) & toast.success(`${product.title} a été ajouté au panier`)
                   }
                 className="text-md font-semibold"
               >
@@ -79,7 +86,7 @@ const ProductsCard = ({ product }) => {
                     quantity: 1,
                     description: product.description,
                   })
-                )
+                ) & toast.success(`${product.title} a été ajouté au panier`)
               }
               className="absolute z-20 w-[80px] text-gray-500 font-semibold hover:text-gray-900 lg:flex items-center gap-2 top-0 lg:transform lg:-translate-x-32 lg:group-hover:translate-x-0 lg:transition-transform cursor-pointer lg:duration-500 hidden"
             >
@@ -98,6 +105,18 @@ const ProductsCard = ({ product }) => {
           )}
         </div>
       </div>
+      <ToastContainer
+          position="top-left"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
     </div>
   );
 };
