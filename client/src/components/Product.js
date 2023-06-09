@@ -6,6 +6,9 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/ShopSlice";
 // React icons
 import { MdOutlineStar, MdOutlineStarOutline } from "react-icons/md";
+// Toastify
+import { ToastContainer, toast } from "react-toastify";
+
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -105,7 +108,7 @@ const Product = () => {
                     quantity: baseQty,
                     description: details.description,
                   })
-                )
+                ) & toast.success(`${details.title} a été ajouté au panier`)
               }
               className="w-[200px] bg-black text-white py-3 sm:px-6 px-4 active:bg-gray-800"
             >
@@ -114,6 +117,18 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

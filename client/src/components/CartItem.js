@@ -94,12 +94,12 @@ const CartItem = () => {
 
               <div>
                 <MdOutlineClose
-                  onClick={() => dispatch(deleteItem(item._id))}
+                  onClick={() => window.confirm(`Voulez vous supprimer "${item.title}" de votre panier?`) ? dispatch(deleteItem(item._id)) : ""}
                   className="text-2xl md:text-red-600 lg:hover:text-red-600 cursor-pointer duration-300 md:block hidden"
                 />
                 <button
                   className="md:hidden md:mt-0 mt-4 bg-red-400 md:p-0 p-2 md:rounded-none rounded-xl"
-                  onClick={() => dispatch(deleteItem(item._id))}
+                  onClick={() => window.confirm(`Voulez vous supprimer "${item.title}" de votre panier?`) ? dispatch(deleteItem(item._id)) : ""}
                 >
                   Supprimer
                 </button>
@@ -111,7 +111,7 @@ const CartItem = () => {
       <div className="flex flex-col w-[250px] mx-auto">
         <button
           onClick={() => {
-            if (productData.length >= 1) {
+            if (productData.length >= 1 && window.confirm(`Voulez vous supprimer l'ensemble de votre panier?`)) {
               return dispatch(resetCart());
             }
           }}
