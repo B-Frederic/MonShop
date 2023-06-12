@@ -27,9 +27,6 @@ const ProductsCard = ({ product }) => {
     });
   };
 
-  const handleAddItem = () => {
-    
-  }
 
   return (
     <div className="group relative">
