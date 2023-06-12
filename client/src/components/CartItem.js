@@ -94,7 +94,7 @@ const CartItem = () => {
 
               <div>
                 <MdOutlineClose
-                  onClick={() => window.confirm(`Voulez vous supprimer "${item.title}" de votre panier?`) ? dispatch(deleteItem(item._id)) : ""}
+                  onClick={() => window.confirm(`Voulez-vous supprimer "${item.title}" de votre panier?`) ? dispatch(deleteItem(item._id)) : ""}
                   className="text-2xl md:text-red-600 lg:hover:text-red-600 cursor-pointer duration-300 md:block hidden"
                 />
                 <button
@@ -111,7 +111,7 @@ const CartItem = () => {
       <div className="flex flex-col w-[250px] mx-auto">
         <button
           onClick={() => {
-            if (productData.length >= 1 && window.confirm(`Voulez vous supprimer l'ensemble de votre panier?`)) {
+            if (productData.length >= 1 && window.confirm(`Voulez-vous supprimer l'ensemble de votre panier?`)) {
               return dispatch(resetCart());
             }
           }}
